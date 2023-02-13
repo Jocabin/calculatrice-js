@@ -1,41 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="style.css">
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app">
-      <div class="keyboard">
-        <button>AC</button>
-        <button>X</button>
-        <button>%</button>
-        <button>&div;</button>
+    <title>Calculatrice</title>
+</head>
+<body>
+<div id="app">
+    <header>
+        <label for="themeToggle">thème sombre</label>
+        <input type="checkbox" id="themeToggle"/>
+    </header>
 
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button>&times;</button>
-
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>-</button>
-
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>+</button>
-
-        <button>0</button>
-        <button>.</button>
-        <button>DEL</button>
-        <button>=</button>
-      </div>
+    <div class="resultScreen">
+        <span class="result"></span>
     </div>
-    <script type="module" src="/main.js"></script>
-  </body>
+
+    <div class="keyboard">
+        <button id="resetOp">AC</button>
+        <button id="jspppp">😃</button>
+        <button id="moduloOp">%</button>
+        <button id="divideOp">&div;</button>
+
+        <button value="7">7</button>
+        <button value="8">8</button>
+        <button value="9">9</button>
+        <button id="multiplyOp">&times;</button>
+
+        <button value="4">4</button>
+        <button value="5">5</button>
+        <button value="6">6</button>
+        <button id="substractOp">-</button>
+
+        <button value="1">1</button>
+        <button value="2">2</button>
+        <button value="3">3</button>
+        <button id="sumOp">+</button>
+
+        <button value="0">0</button>
+        <button value=".">.</button>
+        <button id="delLastOp">DEL</button>
+        <button id="resultOp">=</button>
+    </div>
+</div>
+<script defer type="module" src="/main.js"></script>
+</body>
 </html>
