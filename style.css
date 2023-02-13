@@ -5,11 +5,54 @@
 
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+
+    --bg: #eff1f5;
+    --bg-keyboard: #ccd0da;
+    --bg-btns-keyboard: #dce0e8;
+    --clr-operations: #fe640b;
+    --clr-specials-operations: #d20f39;
+    --clr-txt: #4c4f69;
+}
+
+body.dark {
+    --bg: #eff1f5;
+    --bg-keyboard: #ccd0da;
+    --bg-btns-keyboard: #dce0e8;
+    --clr-txt: #4c4f69;
+}
+
+#app {
+    max-width: 500px;
+    background-color: var(--bg);
+}
+
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(4, 64px);
+    background-color: var(--bg-keyboard);
+    gap: 1rem;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.keyboard button {
+    border: 0;
+    border-radius: 15px;
+    background-color: var(--bg-btns-keyboard);
+    font-size: 2rem;
+    padding: .5rem;
+    cursor: pointer;
 }
