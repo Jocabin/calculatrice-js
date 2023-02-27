@@ -12,6 +12,7 @@ const delLastBtn = document.querySelector('#delLastOp')
 const resultBtn = document.querySelector('#resultOp')
 const resultText = document.querySelector('.result')
 const numbersBtns = document.querySelectorAll('.keyboard button:not([id])')
+const lastCalculationSpan = document.querySelector('.lastCalculation')
 
 numbersBtns.forEach(el => el.addEventListener('click', (e) => {
     if (calculator.isCalculComplete) {
@@ -30,9 +31,8 @@ numbersBtns.forEach(el => el.addEventListener('click', (e) => {
 
 function updateScreen() {
     resultText.textContent = calculator.result
+    lastCalculationSpan.textContent = calculator.lastCalculation
 }
-
-updateScreen()
 
 themeSelector.addEventListener('change', () => {
     document.body.classList.toggle('dark')
@@ -40,6 +40,7 @@ themeSelector.addEventListener('change', () => {
 
 resultBtn.addEventListener('click', () => {
     calculator.compute()
+    calculator.lastCalculation = resultText.textContent
     updateScreen()
 })
 
@@ -50,30 +51,37 @@ resetBtn.addEventListener('click', () => {
 
 delLastBtn.addEventListener('click', () => {
     calculator.deleteLastChar()
-    updateScreen()
+    resultText.textContent = resultText.textContent.slice(0, -1)
 })
 
 moduloBtn.addEventListener('click', () => {
-    calculator.setOperation('%')
-    resultText.textContent += calculator.operation
+    if (calculator.setOperation('%')) {
+        resultText.textContent += calculator.operation
+    }
 })
 
 divideBtn.addEventListener('click', () => {
-    calculator.setOperation('/')
-    resultText.textContent += calculator.operation
+    if (calculator.setOperation('/')) {
+        resultText.textContent += calculator.operation
+    }
 })
 
 multiplyBtn.addEventListener('click', () => {
-    calculator.setOperation('*')
-    resultText.textContent += calculator.operation
+    if (calculator.setOperation('*')) {
+        resultText.textContent += calculator.operation
+    }
 })
 
 substractBtn.addEventListener('click', () => {
-    calculator.setOperation('-')
-    resultText.textContent += calculator.operation
+    if (calculator.setOperation('-')) {
+        resultText.textContent += calculator.operation
+    }
 })
 
 sumBtn.addEventListener('click', () => {
-    calculator.setOperation('+')
-    resultText.textContent += calculator.operation
+    if (calculator.setOperation('+')) {
+        resultText.textContent += calculator.operation
+    }
 })
+
+updateScreen()

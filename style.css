@@ -12,6 +12,7 @@
 
 * {
     color: var(--clr-txt);
+    box-sizing: border-box;
 }
 
 :disabled {
@@ -42,6 +43,8 @@ body.dark {
 #app {
     max-width: 500px;
     background-color: var(--bg);
+    overflow: hidden;
+    border-radius: 1rem;
 }
 
 .keyboard {
@@ -55,10 +58,30 @@ body.dark {
 
 .keyboard button {
     border: 0;
-    border-radius: 15px;
     background-color: var(--bg-btns-keyboard);
     font-size: 2rem;
     padding: .5rem;
     cursor: pointer;
-    color: var(--clr-txt)
+    color: var(--clr-txt);
+    border-radius: 1rem;
+}
+
+.keyboard button:active {
+    transform: translateY(5px);
+}
+
+.resultScreen {
+    width: 100%;
+    height: 220px;
+    padding: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.result {
+    font-size: 2.5rem;
+    font-weight: bold;
 }
