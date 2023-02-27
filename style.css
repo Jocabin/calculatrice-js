@@ -26,8 +26,8 @@ body {
     min-height: 100vh;
 
     --bg: #eff1f5;
-    --bg-keyboard: #ccd0da;
-    --bg-btns-keyboard: #dce0e8;
+    --bg-keyboard: #dce0e8;
+    --bg-btns-keyboard: #ccd0da;
     --clr-operations: #fe640b;
     --clr-specials-operations: #d20f39;
     --clr-txt: #4c4f69;
@@ -35,8 +35,8 @@ body {
 
 body.dark {
     --bg: #4c4f69;
-    --bg-keyboard: #4c4f69;
-    --bg-btns-keyboard: #6c6f85;
+    --bg-keyboard: #6c6f85;
+    --bg-btns-keyboard: #4c4f69;
     --clr-txt: #eff1f5;
 }
 
@@ -56,7 +56,8 @@ body.dark {
     border-radius: 1rem;
 }
 
-.keyboard button {
+.keyboard button, .keyboard .button {
+    text-decoration: none;
     border: 0;
     background-color: var(--bg-btns-keyboard);
     font-size: 2rem;
@@ -64,6 +65,13 @@ body.dark {
     cursor: pointer;
     color: var(--clr-txt);
     border-radius: 1rem;
+}
+
+.keyboard button[id], .operatorSpan {
+    color: var(--clr-specials-operations);
+}
+.dark .keyboard button[id], .operatorSpan {
+    --clr-specials-operations: #26d6b6;
 }
 
 .keyboard button:active {
@@ -84,4 +92,11 @@ body.dark {
 .result {
     font-size: 2.5rem;
     font-weight: bold;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
 }

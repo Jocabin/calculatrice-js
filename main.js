@@ -26,24 +26,24 @@ numbersBtns.forEach(el => el.addEventListener('click', (e) => {
 
     if (!calculator.operation) {
         calculator.firstMember += e.target.value
-        resultText.textContent += e.target.value
+        resultText.innerHTML += e.target.value
     } else {
         calculator.secondMember += e.target.value
-        resultText.textContent += e.target.value
+        resultText.innerHTML += e.target.value
     }
 }))
 
 for (let operation of operators) {
     document.querySelector(`#${operation.name}Op`).addEventListener('click', () => {
         if (calculator.setOperation(`${operation.sign}`)) {
-            resultText.textContent += calculator.operation
+            resultText.innerHTML += `<span class="operatorSpan">${calculator.operation}</span>`
         }
     })
 }
 
 function updateScreen() {
-    resultText.textContent = calculator.result
-    lastCalculationSpan.textContent = calculator.lastCalculation
+    resultText.innerHTML = calculator.result
+    lastCalculationSpan.innerHTML = calculator.lastCalculation
 }
 
 themeSelector.addEventListener('change', () => {
@@ -52,7 +52,7 @@ themeSelector.addEventListener('change', () => {
 
 resultBtn.addEventListener('click', () => {
     calculator.compute()
-    calculator.lastCalculation = resultText.textContent
+    calculator.lastCalculation = resultText.innerHTML
     updateScreen()
 })
 
@@ -63,7 +63,7 @@ resetBtn.addEventListener('click', () => {
 
 delLastBtn.addEventListener('click', () => {
     calculator.deleteLastChar()
-    resultText.textContent = resultText.textContent.slice(0, -1)
+    resultText.innerHTML = resultText.innerHTML.slice(0, -1)
 })
 
 updateScreen()
