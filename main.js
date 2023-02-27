@@ -46,10 +46,6 @@ function updateScreen() {
     lastCalculationSpan.innerHTML = calculator.lastCalculation
 }
 
-themeSelector.addEventListener('change', () => {
-    document.body.classList.toggle('dark')
-})
-
 resultBtn.addEventListener('click', () => {
     calculator.compute()
     calculator.lastCalculation = resultText.innerHTML

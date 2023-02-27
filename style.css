@@ -24,20 +24,14 @@ body {
     display: grid;
     place-items: center;
     min-height: 100vh;
-
-    --bg: #eff1f5;
-    --bg-keyboard: #dce0e8;
-    --bg-btns-keyboard: #ccd0da;
-    --clr-operations: #fe640b;
-    --clr-specials-operations: #d20f39;
-    --clr-txt: #4c4f69;
 }
 
-body.dark {
+#themeToggle:checked + #app {
     --bg: #4c4f69;
     --bg-keyboard: #6c6f85;
     --bg-btns-keyboard: #4c4f69;
     --clr-txt: #eff1f5;
+    --clr-specials-operations: #26d6b6;
 }
 
 #app {
@@ -45,6 +39,13 @@ body.dark {
     background-color: var(--bg);
     overflow: hidden;
     border-radius: 1rem;
+
+    --bg: #eff1f5;
+    --bg-keyboard: #dce0e8;
+    --bg-btns-keyboard: #ccd0da;
+    --clr-operations: #fe640b;
+    --clr-specials-operations: #d20f39;
+    --clr-txt: #4c4f69;
 }
 
 .keyboard {
@@ -69,9 +70,6 @@ body.dark {
 
 .keyboard button[id], .operatorSpan {
     color: var(--clr-specials-operations);
-}
-.dark .keyboard button[id], .operatorSpan {
-    --clr-specials-operations: #26d6b6;
 }
 
 .keyboard button:active {
@@ -99,4 +97,18 @@ header {
     display: flex;
     flex-direction: row;
     padding: 1rem;
+}
+
+#themeToggle, #themeToggle + #app header .light, #themeToggle:checked + #app header .dark {
+    display: none;
+}
+
+#themeToggle:checked + #app header .light {
+    display: block;
+}
+
+#themeToggle + #app header label {
+    cursor: pointer;
+    font-size: 2rem;
+    user-select: none;
 }

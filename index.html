@@ -8,22 +8,23 @@
     <title>Calculatrice</title>
 </head>
 <body>
+<input type="checkbox" id="themeToggle"/>
 <div id="app">
-        <header>
-            <label for="themeToggle">thème sombre</label>
-            <input type="checkbox" id="themeToggle"/>
-        </header>
+    <header>
+        <label for="themeToggle" class="dark">🌙</label>
+        <label for="themeToggle" class="light">🌞</label>
+    </header>
 
-        <div class="resultScreen">
-            <span class="lastCalculation"></span>
-            <span class="result"></span>
-        </div>
+    <div class="resultScreen">
+        <span class="lastCalculation"></span>
+        <span class="result"></span>
+    </div>
 
-        <div class="keyboard">
-            <button id="resetOp">AC</button>
-            <a class="button" target="_blank" href="https://yaakovfar.dev/">🍖</a>
-            <button id="moduloOp">%</button>
-            <button id="divideOp">&div;</button>
+    <div class="keyboard">
+        <button id="resetOp">AC</button>
+        <a class="button" target="_blank" href="https://yaakovfar.dev/">🍖</a>
+        <button id="moduloOp">%</button>
+        <button id="divideOp">&div;</button>
 
         <button value="7">7</button>
         <button value="8">8</button>
